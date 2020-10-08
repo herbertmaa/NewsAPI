@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">COMP3717 Assignment</string>
+    <string name="greetingMessage">Hey, what would you like to learn today?</string>
 </resources>
