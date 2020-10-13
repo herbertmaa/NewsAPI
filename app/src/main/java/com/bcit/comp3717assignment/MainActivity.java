@@ -3,21 +3,19 @@ package com.bcit.comp3717assignment;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.SearchView;
-import android.widget.Toast;
 
+import com.google.gson.Gson;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
-
-import javax.xml.transform.Result;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         SearchView searchBar = findViewById(R.id.searchView);
         searchBar.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
 
@@ -35,6 +34,9 @@ public class MainActivity extends AppCompatActivity {
                 Log.e(ACTIVITY, query);
                 String params[] = new String[]{NEWS_API_URL, query, BuildConfig.NEWS_API_KEY};
                 new SearchNews().execute(params);
+
+//                Intent intent = new Intent(this, DisplayActivity.class);
+//                startActivity(intent);
                 return false;
             }
 
@@ -47,9 +49,18 @@ public class MainActivity extends AppCompatActivity {
 
     class SearchNews extends AsyncTask<String, Void, String> {
 
-        protected void onPostExecute(String result){
-            Context context = MainActivity.this;
-            Toast.makeText(context, result, Toast.LENGTH_LONG).show();
+        protected void onPostExecute(String result) {
+            Gson gson = new Gson();
+            News news = gson.fromJson(result, News.class);
+
+            Log.i("[onPostExecute]Response: ", result);
+            Log.i("[onPostExecute]Response status:", news.getResponseStatus());
+            Log.i("[onPostExecute]Total Results: ", "" + news.getTotalResults());
+
+            Context mainActivityContext = MainActivity.this;
+            Intent intent = new Intent(mainActivityContext, DisplayActivity.class);
+            intent.putExtra("articles", news.getArticles());
+            startActivity(intent);
         }
 
         @Override
