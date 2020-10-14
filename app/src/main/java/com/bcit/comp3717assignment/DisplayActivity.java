@@ -6,6 +6,7 @@ import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -22,6 +23,7 @@ public class DisplayActivity extends AppCompatActivity {
     private ArrayList<Article> articles;
     private ArrayList<String> articleTitles;
     private ListView articleListView;
+    public static String ACTIVITY = "DISPLAY_ACTIVITY";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +38,7 @@ public class DisplayActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
                 Intent intent = new Intent(context, ResultActivity.class);
-                intent.putExtra("index", "Hiiii");
+                intent.putExtra("article", articles.get((int) id));
                 startActivity(intent);
             }
         });
@@ -44,8 +46,7 @@ public class DisplayActivity extends AppCompatActivity {
 
 
 
-    private void showArticleTitles(ListView articleListView)
-    {
+    private void showArticleTitles(ListView articleListView) {
         articleTitles = new ArrayList<>();
         if (getIntent().getExtras().getSerializable("articles") != null)
             articles = (ArrayList<Article>)getIntent().getExtras().getSerializable("articles");
