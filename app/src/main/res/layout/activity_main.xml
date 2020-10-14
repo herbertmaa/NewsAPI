@@ -73,28 +73,37 @@
             android:layout_width="75dp"
             android:layout_height="45dp"
             android:background="@drawable/category_button"
-            android:text="Bitcoin"></Button>
+            android:text="Bitcoin"
+            android:onClick="bitCoinSearch">
+
+        </Button>
 
         <Button
             style="@style/RobotoWhiteFontTextSmallerStyle"
             android:layout_width="75dp"
             android:layout_height="45dp"
             android:background="@drawable/category_button"
-            android:text="USA"></Button>
+            android:text="USA"
+            android:onClick="usaSearch">
+        </Button>
 
         <Button
             style="@style/RobotoWhiteFontTextSmallerStyle"
             android:layout_width="75dp"
             android:layout_height="45dp"
             android:background="@drawable/category_button"
-            android:text="Trump"></Button>
+            android:text="Trump"
+            android:onClick="trumpSearch">
+        </Button>
 
         <Button
             style="@style/RobotoWhiteFontTextSmallerStyle"
             android:layout_width="75dp"
             android:layout_height="45dp"
             android:background="@drawable/category_button"
-            android:text="COVID-19"></Button>
+            android:text="COVID-19"
+            android:onClick="covid19Search">
+        </Button>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

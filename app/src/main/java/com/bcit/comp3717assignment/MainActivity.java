@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.SearchView;
 
 import com.google.gson.Gson;
@@ -34,10 +35,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.e(ACTIVITY, query);
                 String params[] = new String[]{NEWS_API_URL, query, BuildConfig.NEWS_API_KEY};
                 new SearchNews().execute(params);
-
-//                Intent intent = new Intent(this, DisplayActivity.class);
-//                startActivity(intent);
-                return false;
+                return true;
             }
 
             @Override
@@ -46,6 +44,27 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    public void bitCoinSearch(View view) {
+        String params[] = new String[]{NEWS_API_URL, "BITCOIN", BuildConfig.NEWS_API_KEY};
+        new SearchNews().execute(params);
+    }
+
+    public void usaSearch(View view) {
+        String params[] = new String[]{NEWS_API_URL, "USA", BuildConfig.NEWS_API_KEY};
+        new SearchNews().execute(params);
+    }
+
+    public void trumpSearch(View view) {
+        String params[] = new String[]{NEWS_API_URL, "TRUMP", BuildConfig.NEWS_API_KEY};
+        new SearchNews().execute(params);
+    }
+
+    public void covid19Search(View view) {
+        String params[] = new String[]{NEWS_API_URL, "COVID-19", BuildConfig.NEWS_API_KEY};
+        new SearchNews().execute(params);
+    }
+
 
     class SearchNews extends AsyncTask<String, Void, String> {
 
@@ -81,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
                 StringBuilder responseStrBuilder = new StringBuilder();
 
                 String inputStr;
-                while((inputStr = streamReader.readLine()) != null){
+                while ((inputStr = streamReader.readLine()) != null) {
                     responseStrBuilder.append(inputStr);
                 }
 
@@ -92,12 +111,14 @@ public class MainActivity extends AppCompatActivity {
                 in.close();
                 reader.close();
                 streamReader.close();
-                return(response.toString());
+                return (response.toString());
 
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            return("UNABLE TO PROCESS REQUEST");
+            return ("UNABLE TO PROCESS REQUEST");
         }
     }
+
+
 }

@@ -8,71 +8,73 @@
     tools:context=".ResultActivity">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/resultImage"
         android:layout_width="match_parent"
         android:layout_height="230dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
+        android:src="@drawable/placeholder"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+        app:srcCompat="@drawable/placeholder"
+        tools:srcCompat="@drawable/placeholder" />
 
     <TextView
-        android:id="@+id/titleTxtView"
+        android:id="@+id/resultTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:layout_marginEnd="25dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/resultImage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/authorTxtView"
+        android:id="@+id/resultAuthor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="4dp"
         android:text="authorTxtView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintEnd_toEndOf="@+id/resultImage"
+        app:layout_constraintTop_toBottomOf="@+id/resultImage" />
 
     <TextView
-        android:id="@+id/publishDateTxtView"
+        android:id="@+id/resultPublishedDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
         android:text="publishDateTxtView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/authorTxtView" />
+        app:layout_constraintTop_toBottomOf="@+id/resultAuthor" />
 
     <TextView
-        android:id="@+id/contentTxtView"
+        android:id="@+id/resultContent"
         android:layout_width="368dp"
         android:layout_height="276dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="12dp"
         android:text="contentTxtView"
-        app:layout_constraintEnd_toEndOf="@+id/publishDateTxtView"
+        app:layout_constraintEnd_toEndOf="@+id/resultPublishedDate"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/publishDateTxtView" />
+        app:layout_constraintTop_toBottomOf="@+id/resultPublishedDate" />
 
     <TextView
-        android:id="@+id/urlTxtView"
+        android:id="@+id/resultURL"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="urlTxtView"
-        app:layout_constraintEnd_toEndOf="@+id/contentTxtView"
-        app:layout_constraintTop_toBottomOf="@+id/contentTxtView" />
+        app:layout_constraintEnd_toEndOf="@+id/resultContent"
+        app:layout_constraintTop_toBottomOf="@+id/resultContent" />
 
     <TextView
-        android:id="@+id/sourceTxtView"
+        android:id="@+id/resultSource"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="sourceTxtView"
-        app:layout_constraintEnd_toEndOf="@+id/urlTxtView"
-        app:layout_constraintTop_toBottomOf="@+id/urlTxtView" />
+        app:layout_constraintEnd_toEndOf="@+id/resultURL"
+        app:layout_constraintTop_toBottomOf="@+id/resultURL" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

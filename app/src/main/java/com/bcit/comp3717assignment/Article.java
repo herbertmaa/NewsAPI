@@ -11,6 +11,7 @@ public class Article implements Serializable {
     private String urlToImage;
     private String publishedAt;
     private String content;
+    private Source source;
 
     public Article(Source source, String author, String title, String description, String url, String urlToImage, String publishedAt, String content) {
         this.author = author;
@@ -20,6 +21,7 @@ public class Article implements Serializable {
         this.urlToImage = urlToImage;
         this.publishedAt = publishedAt;
         this.content = content;
+        this.source = source;
     }
 
     public String getAuthor() {
@@ -49,4 +51,6 @@ public class Article implements Serializable {
     public String getContent() {
         return content;
     }
+
+    public Source getSource(){ return source; }
 }
