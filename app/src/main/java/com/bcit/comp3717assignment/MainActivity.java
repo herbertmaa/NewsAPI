@@ -22,6 +22,7 @@ import java.net.URL;
 
 /**
  * Herbert Ma - A01065502 - Set 3G
+ * Yongju Kwon - A01059332 - Set 3G
  */
 public class MainActivity extends AppCompatActivity {
 
