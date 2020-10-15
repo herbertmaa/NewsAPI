@@ -2,18 +2,29 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ResultActivity">
+
+
+    <TextView
+        android:id="@+id/resultTitle"
+        style="@style/ResultTitleView"
+        android:layout_width="360dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="25dp"
+        android:textAlignment="textStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resultImage" />
 
     <ImageView
         android:id="@+id/resultImage"
-        android:layout_width="match_parent"
-        android:layout_height="230dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_width="425dp"
+        android:layout_height="250dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
         android:src="@drawable/placeholder"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,59 +33,68 @@
         tools:srcCompat="@drawable/placeholder" />
 
     <TextView
-        android:id="@+id/resultTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="25dp"
-        app:layout_constraintBottom_toBottomOf="@+id/resultImage"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
         android:id="@+id/resultAuthor"
+        style="@style/ResultAuthorView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="4dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="28dp"
         android:text="authorTxtView"
-        app:layout_constraintEnd_toEndOf="@+id/resultImage"
-        app:layout_constraintTop_toBottomOf="@+id/resultImage" />
+        android:textAlignment="viewEnd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resultTitle" />
 
     <TextView
         android:id="@+id/resultPublishedDate"
+        style="@style/ResultTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="32dp"
         android:text="publishDateTxtView"
+        android:textAlignment="viewEnd"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/resultAuthor" />
 
     <TextView
         android:id="@+id/resultContent"
         android:layout_width="368dp"
-        android:layout_height="276dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="12dp"
+        android:layout_height="wrap_content"
         android:text="contentTxtView"
-        app:layout_constraintEnd_toEndOf="@+id/resultPublishedDate"
+        android:textAlignment="viewStart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/resultPublishedDate" />
+        app:layout_constraintTop_toBottomOf="@+id/resultPublishedDate"
+        app:layout_constraintVertical_bias="0.198" />
 
     <TextView
         android:id="@+id/resultURL"
-        android:layout_width="wrap_content"
+        style="@style/ResultTextView"
+        android:layout_width="368dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:autoLink="web"
         android:text="urlTxtView"
-        app:layout_constraintEnd_toEndOf="@+id/resultContent"
+        android:textAlignment="viewStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/resultContent" />
 
     <TextView
         android:id="@+id/resultSource"
-        android:layout_width="wrap_content"
+        style="@style/ResultAuthorView"
+        android:layout_width="368dp"
         android:layout_height="wrap_content"
         android:text="sourceTxtView"
-        app:layout_constraintEnd_toEndOf="@+id/resultURL"
-        app:layout_constraintTop_toBottomOf="@+id/resultURL" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resultURL"
+        app:layout_constraintVertical_bias="0.265" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
