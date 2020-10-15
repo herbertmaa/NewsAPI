@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     public static String NEWS_API_URL = "http://newsapi.org/v2/everything?";
     public static String ACTIVITY = "MAIN_ACTIVITY";
+    private String topic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
 
             Context mainActivityContext = MainActivity.this;
             Intent intent = new Intent(mainActivityContext, DisplayActivity.class);
+            intent.putExtra("topic", topic);
             intent.putExtra("articles", news.getArticles());
             startActivity(intent);
         }
@@ -94,6 +96,8 @@ public class MainActivity extends AppCompatActivity {
             String urlString = strings[0];
             String query = "q=" + strings[1];
             String api_key = "&apiKey=" + strings[2];
+
+            topic = strings[1];
 
             String requestURL = urlString + query + api_key;
 
