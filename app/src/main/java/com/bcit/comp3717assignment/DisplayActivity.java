@@ -31,7 +31,7 @@ public class DisplayActivity extends AppCompatActivity {
         setContentView(R.layout.activity_display);
         context = this;
 
-        articleListView = (ListView)findViewById(R.id.articleListView);
+        articleListView = (ListView) findViewById(R.id.articleListView);
         showArticleTitles(articleListView);
 
         articleListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -45,14 +45,13 @@ public class DisplayActivity extends AppCompatActivity {
     }
 
 
-
     private void showArticleTitles(ListView articleListView) {
         articleTitles = new ArrayList<>();
         if (getIntent().getExtras().getSerializable("articles") != null)
-            articles = (ArrayList<Article>)getIntent().getExtras().getSerializable("articles");
+            articles = (ArrayList<Article>) getIntent().getExtras().getSerializable("articles");
 
         if (articles != null)
-            for (Article article: articles)
+            for (Article article : articles)
                 articleTitles.add(article.getTitle());
 
 

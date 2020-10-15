@@ -29,12 +29,12 @@ public class ResultActivity extends AppCompatActivity {
     public static String ACTIVITY = "RESULT_ACTIVITY";
 
     private Article result;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         getArticle();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
-
         //Initialize view objects
         try {
             initializeViewContents();
@@ -45,8 +45,8 @@ public class ResultActivity extends AppCompatActivity {
     }
 
 
-    private void getArticle(){
-        if (getIntent().getExtras().getSerializable("article") != null){
+    private void getArticle() {
+        if (getIntent().getExtras().getSerializable("article") != null) {
             result = (Article) getIntent().getExtras().getSerializable("article");
         }
     }
@@ -57,8 +57,8 @@ public class ResultActivity extends AppCompatActivity {
         TextView resultAuthor = findViewById(R.id.resultAuthor);
         TextView resultContent = findViewById(R.id.resultContent);
         TextView resultPublishedDate = findViewById(R.id.resultPublishedDate);
-        TextView resultURL =  findViewById(R.id.resultURL);
-        TextView resultSource =  findViewById(R.id.resultSource);
+        TextView resultURL = findViewById(R.id.resultURL);
+        TextView resultSource = findViewById(R.id.resultSource);
 
         resultTitle.setText(result.getTitle());
         resultAuthor.setText(result.getAuthor());
@@ -68,19 +68,21 @@ public class ResultActivity extends AppCompatActivity {
         resultSource.setText(result.getSource().getName());
 
 
-        if(result.getUrlToImage() != null && !result.getUrlToImage().isEmpty()){
+        if (result.getUrlToImage() != null && !result.getUrlToImage().isEmpty()) {
             ImageDownloaderTask imageTask = new ImageDownloaderTask(resultImage);
             imageTask.execute(result.getUrlToImage());
         }
 
     }
+
     class ImageDownloaderTask extends AsyncTask<String, Void, Bitmap> {
 
         private final WeakReference<ImageView> imageViewWeakReference;
 
-        public ImageDownloaderTask(ImageView imageview){
+        public ImageDownloaderTask(ImageView imageview) {
             imageViewWeakReference = new WeakReference<>(imageview);
         }
+
         @Override
         protected Bitmap doInBackground(String... params) {
             return downloadBitmap(params[0]);
@@ -111,7 +113,7 @@ public class ResultActivity extends AppCompatActivity {
                 URL uri = new URL(url);
                 urlConnection = (HttpURLConnection) uri.openConnection();
                 int statusCode = urlConnection.getResponseCode();
-                if (statusCode !=  HttpURLConnection.HTTP_OK) {
+                if (statusCode != HttpURLConnection.HTTP_OK) {
                     return null;
                 }
 
@@ -131,7 +133,7 @@ public class ResultActivity extends AppCompatActivity {
             }
             return null;
 
-    }
+        }
 
     }
 

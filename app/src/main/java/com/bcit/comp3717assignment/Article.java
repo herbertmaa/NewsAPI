@@ -52,5 +52,7 @@ public class Article implements Serializable {
         return content;
     }
 
-    public Source getSource(){ return source; }
+    public Source getSource() {
+        return source;
+    }
 }

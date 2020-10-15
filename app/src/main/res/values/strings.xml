@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">NEWS.IO</string>
     <string name="greetingMessage">Hey, what would you like to learn today?</string>
+    <string name="errorMessage"> Unable to load text.</string>
+    <string name= "errorImageMessage"> Unable to load image. </string>
+    <string name="errorTitleMessage">Unable to load title</string>
+    <string name="popularBtnText1">Bitcoin</string>
+    <string name="popularBtnText2">USA</string>
+    <string name="popularBtnText3">Trump</string>
+    <string name="popularBtnText4">COVID-19</string>
+    <string name="imageLogoText">News.IO</string>
 </resources>

@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.SearchView;
 
 import com.google.gson.Gson;
+
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -18,10 +19,15 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 
+
+/**
+ * Herbert Ma - A01065502 - Set 3G
+ */
 public class MainActivity extends AppCompatActivity {
 
     public static String NEWS_API_URL = "http://newsapi.org/v2/everything?";
     public static String ACTIVITY = "MAIN_ACTIVITY";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

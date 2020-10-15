@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<!-- Vertical Layout -->
+<!-- Horizontal Layout -->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -20,16 +19,17 @@
             style="@style/ResultTitleView"
             android:layout_width="360dp"
             android:layout_height="65dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="20dp"
             android:text="@string/errorTitleMessage"
             android:textAlignment="textStart"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.479"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/resultImage" />
 
         <ImageView
             android:id="@+id/resultImage"
-            android:layout_width="425dp"
+            android:layout_width="500dp"
             android:layout_height="250dp"
             android:adjustViewBounds="true"
             android:contentDescription="@string/errorImageMessage"
@@ -44,30 +44,32 @@
         <TextView
             android:id="@+id/resultAuthor"
             style="@style/ResultAuthorView"
-            android:layout_width="wrap_content"
+            android:layout_width="368dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="52dp"
-            android:layout_marginEnd="55dp"
+            android:layout_marginTop="28dp"
             android:text="@string/errorMessage"
-            android:textAlignment="viewEnd"
+            android:textAlignment="viewStart"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.488"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/resultTitle" />
 
         <TextView
             android:id="@+id/resultPublishedDate"
             style="@style/ResultTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="368dp"
+            android:layout_height="19dp"
             android:layout_marginTop="12dp"
-            android:layout_marginEnd="55dp"
             android:text="@string/errorMessage"
-            android:textAlignment="viewEnd"
+            android:textAlignment="viewStart"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.488"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/resultAuthor" />
 
         <TextView
             android:id="@+id/resultContent"
-            android:layout_width="325dp"
+            android:layout_width="368dp"
             android:layout_height="wrap_content"
             android:text="@string/errorMessage"
             android:textAlignment="viewStart"
@@ -81,7 +83,7 @@
         <TextView
             android:id="@+id/resultURL"
             style="@style/ResultTextView"
-            android:layout_width="325dp"
+            android:layout_width="368dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:autoLink="web"
@@ -95,9 +97,9 @@
         <TextView
             android:id="@+id/resultSource"
             style="@style/ResultAuthorView"
-            android:layout_width="325dp"
+            android:layout_width="368dp"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
+            android:layout_marginTop="15dp"
             android:text="@string/errorMessage"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
