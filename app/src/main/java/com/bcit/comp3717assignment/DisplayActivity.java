@@ -1,31 +1,18 @@
 package com.bcit.comp3717assignment;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Layout;
-import android.util.AttributeSet;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
+
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-
-import javax.xml.transform.Result;
 
 public class DisplayActivity extends AppCompatActivity implements DisplayItemAdapter.RecyclerViewClickInterface {
 
@@ -50,10 +37,7 @@ public class DisplayActivity extends AppCompatActivity implements DisplayItemAda
         }
 
         TextView topicTextView = findViewById(R.id.topicTextView);
-        topicTextView.setText("Topic: " + topic.toUpperCase());
-
-        TextView totalResultsView = findViewById(R.id.totalResultsView);
-        totalResultsView.setText("Total results: " + articles.size() + " articles");
+        topicTextView.setText("Results: " + topic.toUpperCase());
 
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -72,19 +56,6 @@ public class DisplayActivity extends AppCompatActivity implements DisplayItemAda
         }
 
         return displayItems;
-    }
-
-    private void showArticleTitles(ListView articleListView) {
-        articleTitles = new ArrayList<>();
-        if (getIntent().getExtras().getSerializable("articles") != null)
-            articles = (ArrayList<Article>) getIntent().getExtras().getSerializable("articles");
-
-        if (articles != null)
-            for (Article article : articles)
-                articleTitles.add(article.getTitle());
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, articleTitles);
-        articleListView.setAdapter(adapter);
     }
 
     @Override
