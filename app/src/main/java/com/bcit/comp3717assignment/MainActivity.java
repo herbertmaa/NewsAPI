@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         searchBar.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-//                Log.e(ACTIVITY, query);
+                Log.e(ACTIVITY, query);
                 String params[] = new String[]{NEWS_API_URL, query, BuildConfig.NEWS_API_KEY};
                 searchBar.setIconified(true);
                 new SearchNews().execute(params);

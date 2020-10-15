@@ -60,8 +60,6 @@ class ImageDownloaderTask extends AsyncTask<String, Void, Bitmap> {
                 return bitmap;
             }
         } catch (Exception e) {
-            urlConnection.disconnect();
-            Log.e("ImageDownloader", e.toString());
             Log.w("ImageDownloader", "Error downloading image from " + url);
         } finally {
             if (urlConnection != null) {
