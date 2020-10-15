@@ -27,22 +27,25 @@ public class MainActivity extends AppCompatActivity {
 
     public static String NEWS_API_URL = "http://newsapi.org/v2/everything?";
     public static String ACTIVITY = "MAIN_ACTIVITY";
+    private String topic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        SearchView searchBar = findViewById(R.id.searchView);
+        final SearchView searchBar = findViewById(R.id.searchView);
         searchBar.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-
             @Override
             public boolean onQueryTextSubmit(String query) {
-                Log.e(ACTIVITY, query);
+//                Log.e(ACTIVITY, query);
                 String params[] = new String[]{NEWS_API_URL, query, BuildConfig.NEWS_API_KEY};
+                searchBar.setIconified(true);
                 new SearchNews().execute(params);
                 return true;
             }
+
+
 
             @Override
             public boolean onQueryTextChange(String newText) {
@@ -84,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
 
             Context mainActivityContext = MainActivity.this;
             Intent intent = new Intent(mainActivityContext, DisplayActivity.class);
+            intent.putExtra("topic", topic);
             intent.putExtra("articles", news.getArticles());
             startActivity(intent);
         }
@@ -94,6 +98,8 @@ public class MainActivity extends AppCompatActivity {
             String urlString = strings[0];
             String query = "q=" + strings[1];
             String api_key = "&apiKey=" + strings[2];
+
+            topic = strings[1];
 
             String requestURL = urlString + query + api_key;
 
