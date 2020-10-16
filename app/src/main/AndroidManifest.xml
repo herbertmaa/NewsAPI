@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.bcit.comp3717assignment">
+    package="com.bcit.MA_KWON">
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -13,9 +13,9 @@
         android:usesCleartextTraffic="true"
         android:configChanges="orientation|keyboardHidden|screenSize"
         >
-        <activity android:name=".DisplayActivity"></activity>
-        <activity android:name=".ResultActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name="com.bcit.MA_KWON.DisplayActivity"></activity>
+        <activity android:name="com.bcit.MA_KWON.ResultActivity" />
+        <activity android:name="com.bcit.MA_KWON.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

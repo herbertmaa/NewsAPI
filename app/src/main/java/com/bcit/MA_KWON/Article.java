@@ -1,4 +1,4 @@
-package com.bcit.comp3717assignment;
+package com.bcit.MA_KWON;
 
 import java.io.Serializable;
 

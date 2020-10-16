@@ -1,4 +1,4 @@
-package com.bcit.comp3717assignment;
+package com.bcit.MA_KWON;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;

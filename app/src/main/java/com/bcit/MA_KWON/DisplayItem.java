@@ -1,6 +1,4 @@
-package com.bcit.comp3717assignment;
-
-import android.graphics.Bitmap;
+package com.bcit.MA_KWON;
 
 public class DisplayItem {
 
